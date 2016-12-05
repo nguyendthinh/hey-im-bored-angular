@@ -1,0 +1,23 @@
+{
+  "name": "hey-im-bored-angular",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "checklist-model": "^0.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julietberman/hey-im-bored-angular.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/julietberman/hey-im-bored-angular/issues"
+  },
+  "homepage": "https://github.com/julietberman/hey-im-bored-angular#readme"
+}
