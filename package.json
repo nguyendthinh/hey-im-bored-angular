@@ -12,12 +12,22 @@
   },
   "repository": {
     "type": "git",
+<<<<<<< HEAD
     "url": "git+https://github.com/donovanallen/hey-im-bored-angular.git"
+=======
+    "url": "git+https://github.com/julietberman/hey-im-bored-angular.git"
+>>>>>>> cd3b67d7ed079a2492858751b86d98e437871960
   },
   "author": "",
   "license": "ISC",
   "bugs": {
+<<<<<<< HEAD
     "url": "https://github.com/donovanallen/hey-im-bored-angular/issues"
   },
   "homepage": "https://github.com/donovanallen/hey-im-bored-angular#readme"
+=======
+    "url": "https://github.com/julietberman/hey-im-bored-angular/issues"
+  },
+  "homepage": "https://github.com/julietberman/hey-im-bored-angular#readme"
+>>>>>>> cd3b67d7ed079a2492858751b86d98e437871960
 }
