@@ -14,12 +14,7 @@ function RouterFunction($stateProvider) {
 }
 
 function IndexControllerFunction($scope) {
-  // this.newUserInput = new EventFactory();
-  // this.create = function() {
-  //     this.newUserInput.save().then(function(event){
-  //       $state.go("index")
-  //     })
-  //   }
+
   $scope.categories = [
     'music',
     'comedy',
@@ -28,7 +23,18 @@ function IndexControllerFunction($scope) {
     'food',
     'family'
   ];
+
+  $scope.postal_code = []
+
   $scope.user = {
-    categories: ['music']
+    categories: [],
+    postal_code: []
   };
+
+
+  this.create = function(user){
+
+    console.log(user)
+      // this.songs.$add(this.newSong).then( () => this.newSong = {} )
+  }
 }
