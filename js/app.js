@@ -1,10 +1,10 @@
 angular
   .module("heyimbored", ["ui.router", "checklist-model", "ngResource"])
   .config(["$stateProvider", RouterFunction])
-  .controller("IndexController", ["$scope", IndexControllerFunction])
+  .controller("IndexController", ["$scope", "$state", IndexControllerFunction])
   .controller("ShowController", [
   "$scope",
-  "EventFactory",
+  "EventFactory", "$state",
   ShowControllerFunction])
   .factory("EventFactory", [
     "$resource",
@@ -34,8 +34,7 @@ function RouterFunction($stateProvider) {
 }
 
 
-
-function IndexControllerFunction($scope) {
+function IndexControllerFunction($scope, $state) {
 
   $scope.categories = [
     'Music',
@@ -55,15 +54,24 @@ function IndexControllerFunction($scope) {
 
 
   this.create = function(user){
+    // send this object to API and data.categories and data.postal_code
     console.log(user)
       // this.songs.$add(this.newSong).then( () => this.newSong = {} )
+    $state.go("show")
   }
 }
 
 
-function ShowControllerFunction($scope, EventFactory) {
-  $scope.events = EventFactory.query();
-  $scope.events.$promise.then((data) => {
+function ShowControllerFunction($scope, EventFactory, $state) {
+  $scope.event = EventFactory.get();
+  $scope.event.$promise.then((data) => {
     console.log(data);
   })
+
+  this.destroy = function(event){
+    $scope.event.$delete(event).then(function(){
+    $state.go("show")
+    $scope.event = EventFactory.get();
+  })
+}
 }

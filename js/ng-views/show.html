@@ -1,3 +1,7 @@
-Hello World
 
-<pre>{{ events | json}}</pre>
+<h1>What do you think about...</h1>
+<h2>{{event.title}}</h2>
+<p>{{event.venue_name}}</p>
+<p>{{event.venue_address}}, {{event.city_name}}</p>
+<button data-ng-click="vm.destroy(event)">Nahhh, I'll Pass</button>
+<a href={{event.url}} target="blank"><button>Hell, Yea!</button></a>
