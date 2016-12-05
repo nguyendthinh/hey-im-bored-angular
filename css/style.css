@@ -1,0 +1,153 @@
+html {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgb(207,231,250);
+  background: -moz-linear-gradient(left, rgba(207,231,250,1) 0%, rgba(99,147,193,1) 100%);
+  background: -webkit-linear-gradient(left, rgba(207,231,250,1) 0%,rgba(99,147,193,1) 100%);
+  background: linear-gradient(to right, rgba(207,231,250,1) 0%,rgba(99,147,193,1) 100%);
+
+  /*background: -webkit-linear-gradient(90deg, #50C9C3 10%, #96DEDA 90%);*/
+}
+
+button {
+  min-height: 40px;
+  min-width: 130px;
+  background-color: teal;
+  color: white;
+  line-height: 37px;
+  margin: auto;
+  font-family: Arial;
+  font-size: 30px;
+  padding: 20px;
+  margin: 30px;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, .8);
+  border-radius: 4px;
+}
+
+.circle:hover {
+  background-color: teal;
+}
+
+.button:active, .circle:active {
+  box-shadow: none;
+}
+
+.circle {
+  border-radius: 50%;
+  height: 130px;
+  width: 130px;
+  background-color: black;
+  color: white;
+  line-height: 130px;
+  margin: auto;
+  text-align: center;
+  font-family: Arial;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, .3);
+  margin: 20px;
+}
+
+.clicked {
+  background-color: teal;
+}
+
+input[type="text"] {
+  font-size: 50px;
+  width: 300px;
+  text-align: center;
+  border: 1px solid black;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, .4);
+  color: black;
+  border-radius: 5px;
+}
+
+input[type="text"]:focus {
+  background-color: rgb(207,231,250);
+}
+
+input[type="text"]:not(focus) {
+  background-color: white;
+}
+
+#maincontent {
+  /* Make content be in the middle of the screen browser*/
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#intro {
+  font-family: Arial;
+}
+
+h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 70px;
+  color: black;
+}
+
+#zipcodeform p {
+  margin-top: 30px;
+}
+
+#selections {
+  display: none;
+}
+
+#categories {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+}
+
+#columnOne, #columnTwo {
+  padding: 0px 10px;
+}
+
+#choices {
+  display: none;
+}
+
+#eventbox {
+  height: auto;
+  width: auto;
+  padding: 50px;
+  background-color: teal;
+  color: white;
+  border-radius: 5px;
+  box-shadow: inset 0 0 3px 3px rgba(0, 200, 200, .7), 0px 10px 15px rgba(0, 0, 0, .3);
+  display: inline-block;
+  vertical-align: middle;
+  font-family: Arial;
+  margin-bottom: 20px;
+}
+
+#eventinfo h1 {
+  font-size: 40px;
+}
+
+#startagainbutton {
+  display: none;
+}
+
+.icons{
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+section {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}

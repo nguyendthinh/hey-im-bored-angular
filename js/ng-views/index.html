@@ -1,9 +1,20 @@
-<div class="">
+<div id="intro">
   <h2>Enter your location below</h2>
+  <form id = "zipcodeform" data-ng-submit="vm.create(user)">
 
-  <label ng-repeat="category in categories">
-    <input type="checkbox" checklist-model="user.categories" checklist-value="category"> {{category}}
-  </label>
+      <input type="text" name="postal_code" placeholder="ZIPCODE"  data-ng-model="user.postal_code"><br/>
+    <section>
+      <div class="icons">
+        <label ng-repeat="category in categories">
+          <div class="circle">
+            <input type="checkbox" checklist-model="user.categories" checklist-value="category"> {{category}}
+          </div>
+        </label>
+      </div>
+    </section>
+      <button type="submit">Let's Go!</button>
+  </form>
+
   <br/>
-  {{user.categories}}
+  
 </div>
