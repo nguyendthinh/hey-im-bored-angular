@@ -1,0 +1,31 @@
+<div class="">
+  <h2>Enter your location below</h2>
+
+  <label ng-repeat="category in categories">
+    <input type="checkbox" checklist-model="user.categories" checklist-value="category"> {{category}}
+  </label>
+  <div>
+    {{ user.categories}}
+  </div>
+  <!-- <form data-ng-submit="vm.create()">
+    <input type="text" data-ng-model="vm.newUserInput.postal_code" placeholder="Enter Zipcode">
+
+    <br><br>
+
+    <input type="checkbox" data-ng-model="vm.newUserInput.music" value="Music"> Music Icon
+
+    <input type="checkbox" data-ng-model="vm.newUserInput.comedy" value="Comedy"> Comedy Icon
+
+    <input type="checkbox" data-ng-model="vm.newUserInput.sports" value="Sports">Sports Icon
+    <br>
+    <input type="checkbox" data-ng-model="vm.newUserInput.arts" value="Performing Arts"> Arts Icon
+
+    <input type="checkbox" data-ng-model="vm.newUserInput.food" value="Food"> Food Icon
+
+    <input type="checkbox" data-ng-model="vm.newUserInput.family" value="Family"> Family Icon
+
+    <br><br>
+
+    <button type="sumbit">Let's be not bored</button>
+  </form> -->
+</div>
