@@ -2,6 +2,7 @@ angular
   .module("heyimbored", ["ui.router", "checklist-model"])
   .config(["$stateProvider", RouterFunction])
   .controller("IndexController", ["$scope", IndexControllerFunction])
+  .controller("ShowController", ["$scope", ShowControllerFunction])
 
 function RouterFunction($stateProvider) {
   $stateProvider
@@ -11,17 +12,23 @@ function RouterFunction($stateProvider) {
       controller: "IndexController",
       controllerAs: "vm"
     })
+    .state("show",{
+      url: "/events",
+      templateUrl: "/js/ng-views/show.html",
+      controller: "ShowController",
+      controllerAs: "vm"
+    })
 }
 
 function IndexControllerFunction($scope) {
 
   $scope.categories = [
-    'music',
-    'comedy',
-    'sports',
-    'arts',
-    'food',
-    'family'
+    'Music',
+    'Comedy',
+    'Sports',
+    'Arts',
+    'Food',
+    'Family'
   ];
 
   $scope.postal_code = []
@@ -33,8 +40,12 @@ function IndexControllerFunction($scope) {
 
 
   this.create = function(user){
-
     console.log(user)
       // this.songs.$add(this.newSong).then( () => this.newSong = {} )
   }
+}
+
+
+function ShowControllerFunction($scope) {
+  
 }
