@@ -1,16 +1,7 @@
 angular
-  .module("heyimbored", [
-    "ui.router"
-  ])
-  .config([
-    "$stateProvider",
-    RouterFunction
-  ])
-  .controller("IndexController", [
-    "$state",
-    "$scope",
-    IndexControllerFunction
-  ])
+  .module("heyimbored", ["ui.router", "checklist-model"])
+  .config(["$stateProvider", RouterFunction])
+  .controller("IndexController", ["$scope", IndexControllerFunction])
 
 function RouterFunction($stateProvider) {
   $stateProvider
@@ -22,14 +13,13 @@ function RouterFunction($stateProvider) {
     })
 }
 
-function IndexControllerFunction($state, $scope) {
+function IndexControllerFunction($scope) {
   // this.newUserInput = new EventFactory();
-  this.create = function() {
-      this.newUserInput.save().then(function(event){
-        $state.go("index")
-      })
-  }
-  
+  // this.create = function() {
+  //     this.newUserInput.save().then(function(event){
+  //       $state.go("index")
+  //     })
+  //   }
   $scope.categories = [
     'music',
     'comedy',
@@ -41,5 +31,4 @@ function IndexControllerFunction($state, $scope) {
   $scope.user = {
     categories: ['music']
   };
-
 }
