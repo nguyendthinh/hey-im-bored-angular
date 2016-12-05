@@ -1,8 +1,21 @@
 angular
-  .module("heyimbored", ["ui.router", "checklist-model"])
+  .module("heyimbored", ["ui.router", "checklist-model", "ngResource"])
   .config(["$stateProvider", RouterFunction])
   .controller("IndexController", ["$scope", IndexControllerFunction])
-  .controller("ShowController", ["$scope", ShowControllerFunction])
+  .controller("ShowController", [
+  "$scope",
+  "EventFactory",
+  ShowControllerFunction])
+  .factory("EventFactory", [
+    "$resource",
+    EventFactoryFunction
+  ])
+
+  function EventFactoryFunction($resource) {
+    return $resource("http://localhost:4001/api/events", {}, {
+      update: {method: "PUT"}
+    })
+  }
 
 function RouterFunction($stateProvider) {
   $stateProvider
@@ -19,6 +32,8 @@ function RouterFunction($stateProvider) {
       controllerAs: "vm"
     })
 }
+
+
 
 function IndexControllerFunction($scope) {
 
@@ -46,6 +61,9 @@ function IndexControllerFunction($scope) {
 }
 
 
-function ShowControllerFunction($scope) {
-  
+function ShowControllerFunction($scope, EventFactory) {
+  $scope.events = EventFactory.query();
+  $scope.events.$promise.then((data) => {
+    console.log(data);
+  })
 }
