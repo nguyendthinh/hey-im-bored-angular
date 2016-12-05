@@ -20,6 +20,8 @@ body{
   background-image: url("https://static.pexels.com/photos/36487/above-adventure-aerial-air.jpg");
   background-size: cover;
   background-attachment: fixed;
+  font-family: helvetica;
+  color: white;
 }
 
 h2{
@@ -29,7 +31,7 @@ h2{
 
 button {
   min-height: 40px;
-  min-width: 200px;
+  width: 250px;
   background-color: RGB(104, 162, 193);
   color: white;
   line-height: 37px;
