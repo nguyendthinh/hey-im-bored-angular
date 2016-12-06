@@ -63,7 +63,7 @@ function IndexControllerFunction($scope, $state, $http) {
       method: "post",
       data: user
     }).then(() => {
-      $state.go("show");
+      $state.go("show", {reload: true});
     });
       // $http.get("http://localhost:4001")
 
