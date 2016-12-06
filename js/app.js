@@ -1,7 +1,10 @@
 angular
   .module("heyimbored", ["ui.router", "checklist-model", "ngResource"])
   .config(["$stateProvider", RouterFunction])
-  .controller("IndexController", ["$scope", "$state", IndexControllerFunction])
+  .controller("IndexController", ["$scope",
+  "$state",
+  "$http",
+  IndexControllerFunction])
   .controller("ShowController", [
   "$scope",
   "EventFactory", "$state",
@@ -34,7 +37,7 @@ function RouterFunction($stateProvider) {
 }
 
 
-function IndexControllerFunction($scope, $state) {
+function IndexControllerFunction($scope, $state, $http) {
 
   $scope.categories = [
     'Music',
@@ -55,9 +58,15 @@ function IndexControllerFunction($scope, $state) {
 
   this.create = function(user){
     // send this object to API and data.categories and data.postal_code
-    console.log(user)
-      // this.songs.$add(this.newSong).then( () => this.newSong = {} )
-    $state.go("show")
+    $http({
+      url: "http://localhost:4001/",
+      method: "post",
+      data: user
+    }).then(() => {
+      $state.go("show");
+    });
+      // $http.get("http://localhost:4001")
+
   }
 }
 
