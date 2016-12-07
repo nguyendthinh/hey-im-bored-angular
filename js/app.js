@@ -62,54 +62,29 @@ function IndexControllerFunction($scope, $state, $http, EventFactory, $statePara
       url: "http://localhost:4001/api/events/",
       method: "post",
       data: user
-<<<<<<< HEAD
-    }).then(() => {
-      $state.go("show", {reload: true});
-    });
-=======
     }).then((res) => {
       $state.go("show", {}, {reload: true});
     })
->>>>>>> 7354c578b0057a8fe41be0577b3aae4e529918cc
   }
 }
 
 
 function ShowControllerFunction($scope, EventFactory, $state) {
-<<<<<<< HEAD
-  $scope.event = EventFactory.get({}, function(){
-    console.log($scope.event)
 
-  })
-=======
   $scope.event = EventFactory.get();
-  $scope.EventValid = true;
->>>>>>> 7354c578b0057a8fe41be0577b3aae4e529918cc
-
   $scope.EventValid = true;
 
   this.destroy = function(event){
     $scope.event.$delete(event).then(function(){
     $scope.event = EventFactory.get({}, function(){
-<<<<<<< HEAD
-       let validation = ($scope.event.title)
-       console.log(validation)
-       if (validation != undefined){
-         console.log("true");
-       }
-       else{
-         console.log("false")
-          $scope.EventValid = false;
-=======
-       var validation = ($scope.event.title)
 
+       var validation = ($scope.event.title)
 
        if (validation){
          $scope.EventValid = true;
        }
        else{
          $scope.EventValid = false;
->>>>>>> 7354c578b0057a8fe41be0577b3aae4e529918cc
        }
     })
     $state.go("show")

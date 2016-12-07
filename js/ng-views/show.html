@@ -3,7 +3,6 @@
 <div id="eventbox">
 <h2>{{event.title}}</h2>
 <h2>{{event.comment}}</h2>
-<<<<<<< HEAD
 
 <h3>VENUE: {{event.venue_name}}</h3>
 <h3>LOCATION: {{event.venue_address}}</h3>
@@ -13,13 +12,3 @@
   <a href={{event.url}} target="blank"><button ng-show="EventValid">Hell, Yea!</button></a>
   <button data-ng-click="vm.searchAgain()" ng-hide="EventValid">Search Again</button>
 </div>
-=======
-<p>{{event.venue_name}}</p>
-<p>{{event.venue_address}}, {{event.city_name}}</p>
-
-<button ng-show="EventValid" data-ng-click="vm.destroy(event)">Nahhh, I'll Pass</button>
-
-<a href={{event.url}} target="blank"><button ng-show="EventValid">Hell, Yea!</button></a>
-
-<button data-ng-click="vm.searchAgain()" ng-hide="EventValid">Search Again</button>
->>>>>>> 7354c578b0057a8fe41be0577b3aae4e529918cc
