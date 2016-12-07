@@ -2,69 +2,75 @@ html {
   width: 100%;
   height: 100%;
   text-align: center;
-
   /*background: rgb(207,231,250);
   background: -moz-linear-gradient(left, rgba(207,231,250,1) 0%, rgba(99,147,193,1) 100%);
   background: -webkit-linear-gradient(left, rgba(207,231,250,1) 0%,rgba(99,147,193,1) 100%);
   background: linear-gradient(to right, rgba(207,231,250,1) 0%,rgba(99,147,193,1) 100%);*/
-
   /*background: -webkit-linear-gradient(90deg, #50C9C3 10%, #96DEDA 90%);*/
 }
-
-body{
+@keyframes animated {
+    0%{background-position:0% 100%}
+    50%{background-position: 100% 0%}
+    100%{background-position:0% 100%}
+}
+body {go
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   height: 100vh;
-  background-image: url("https://static.pexels.com/photos/36487/above-adventure-aerial-air.jpg");
+  /*background-image: url("https://static.pexels.com/photos/36487/above-adventure-aerial-air.jpg");
   background-size: cover;
-  background-attachment: fixed;
-  font-family: helvetica;
-  color: white;
+  background-attachment: fixed;*/
+  background: linear-gradient(235deg, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #4b0082, #ee82ee);
+background-size: 800%;
+animation: animated 120s ease infinite;
 }
-
-h2{
-  color: white;
-  font-size: 40px;
+h2, h3 {
+  color: black;
+  font-family: Arial;
 }
-
+h2 {
+  font-size: 30px;
+}
 button {
   min-height: 40px;
-  width: 250px;
-  background-color: RGB(104, 162, 193);
-  color: white;
+  min-width: 200px;
+  background-color: white;
+  /*background-color: RGB(104, 162, 193);*/
+  color: black;
   line-height: 37px;
   margin: auto;
   font-family: Arial;
   font-size: 30px;
+  font-weight: bold;
   padding-right: 20px;
   padding-left: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
   margin: 30px;
-  box-shadow: 3px 3px 0px rgba(0, 0, 0, .8);
-  border-radius: 4px;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, .8);
+  border-radius: 10px;
+  border: none;
 }
-
 button:hover {
-  background-color: #324158;
+  transform: scale(1.2);
+  /*background-color: #324158;*/
 }
-
 .circle:hover {
-  background-color: RGB(104, 162, 193);
+  transform: scale(1.2);
+  /*background-color: RGB(104, 162, 193);*/
 }
-
 .button:active, .circle:active {
   box-shadow: none;
 }
-
 .circle {
   border-radius: 50%;
   height: 130px;
   width: 130px;
   background-color: black;
   color: white;
+  font-weight: bold;
   line-height: 130px;
   margin: auto;
   text-align: center;
@@ -72,11 +78,12 @@ button:hover {
   box-shadow: 0px 10px 15px rgba(0, 0, 0, .3);
   margin: 20px;
 }
-
 .clicked {
   background-color: RGB(104, 162, 173);
 }
-
+input[type="checkbox"] {
+  /*display: none;*/
+}
 input[type="text"] {
   font-size: 30px;
   width: 600px;
@@ -87,46 +94,33 @@ input[type="text"] {
   color: black;
   border-radius: 5px;
 }
-
 input[type="text"]:focus {
   background-color: rgb(207,231,250);
 }
-
 input[type="text"]:not(focus) {
   background-color: white;
 }
-
 #maincontent {
   /* Make content be in the middle of the screen browser*/
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
-
 #intro {
   font-family: Arial;
 }
-
 h1 {
   font-family: 'Fredoka One', cursive;
   font-size: 70px;
   color: white;
 }
-
 #zipcodeform p {
   margin-top: 30px;
 }
-
 #selections {
   display: none;
 }
-
 #categories {
   display: flex;
   flex-direction: row;
@@ -134,44 +128,53 @@ h1 {
   justify-content: center;
   align-content: center;
 }
-
 #columnOne, #columnTwo {
   padding: 0px 10px;
 }
-
 #choices {
   display: none;
 }
-
 #eventbox {
   height: auto;
   width: auto;
   padding: 50px;
-  background-color: RGB(104, 162, 173);
-  color: white;
-  border-radius: 5px;
-  box-shadow: inset 0 0 3px 3px RGB(104, 162, 173), 0px 10px 15px rgba(0, 0, 0, .3);
+  background-color: white;
+  /*background-color: RGB(104, 162, 173);*/
+  color: black;
+  border-radius: 10px;
+  box-shadow: inset 0 0 1px 1px gray, 0px 10px 15px rgba(0, 0, 0, .5);
   display: inline-block;
   vertical-align: middle;
   font-family: Arial;
   margin-bottom: 20px;
 }
-
+#showpage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 #eventinfo h1 {
   font-size: 30px;
 }
-
 #startagainbutton {
   display: none;
 }
-
+#introbox {
+  border: 1px solid white;
+  height: 100px;
+  width: 100px;
+  position: ;
+}
+#intro h2 {
+  color: white;
+}
 .icons{
   display: flex;
   flex-direction: row;
   width: 85%;
   flex-wrap: wrap;
   justify-content: center;
-
 }
 section {
   display: flex;
@@ -179,6 +182,9 @@ section {
   margin: 20px;
 }
 main{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
  width: 100%;
 }
-input{}
