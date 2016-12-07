@@ -3,7 +3,7 @@ angular
   .config(["$stateProvider", RouterFunction])
   .controller("IndexController", ["$scope",
   "$state",
-  "$http",
+  "$http", "EventFactory", "$stateParams",
   IndexControllerFunction])
   .controller("ShowController", [
   "$scope",
@@ -29,7 +29,7 @@ function RouterFunction($stateProvider) {
       controllerAs: "vm"
     })
     .state("show",{
-      url: "/events",
+      url: "/events/:id",
       templateUrl: "/js/ng-views/show.html",
       controller: "ShowController",
       controllerAs: "vm"
@@ -37,7 +37,7 @@ function RouterFunction($stateProvider) {
 }
 
 
-function IndexControllerFunction($scope, $state, $http) {
+function IndexControllerFunction($scope, $state, $http, EventFactory, $stateParams) {
 
   $scope.categories = [
     'Music',
@@ -59,40 +59,31 @@ function IndexControllerFunction($scope, $state, $http) {
   this.create = function(user){
     // send this object to API and data.categories and data.postal_code
     $http({
-      url: "http://localhost:4001/",
+      url: "http://localhost:4001/api/events/",
       method: "post",
       data: user
-    }).then(() => {
-      $state.go("show");
-    });
-      // $http.get("http://localhost:4001")
-
+    }).then((res) => {
+      $state.go("show", {}, {reload: true});
+    })
   }
 }
 
 
 function ShowControllerFunction($scope, EventFactory, $state) {
-  $scope.event = EventFactory.get({}, function(){
-    console.log($scope.event)
-
-  })
-  // this.event.then(function(err, result){
-  //   console.log(result)
-  // })
-
+  $scope.event = EventFactory.get();
   $scope.EventValid = true;
 
   this.destroy = function(event){
     $scope.event.$delete(event).then(function(){
     $scope.event = EventFactory.get({}, function(){
-       let validation = ($scope.event.title)
-       console.log(validation)
-       if (validation == true){
-         console.log("true");
+       var validation = ($scope.event.title)
+
+
+       if (validation){
+         $scope.EventValid = true;
        }
        else{
-         console.log("false")
-          $scope.EventValid = false;
+         $scope.EventValid = false;
        }
     })
     $state.go("show")

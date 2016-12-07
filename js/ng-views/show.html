@@ -4,6 +4,9 @@
 <h2>{{event.comment}}</h2>
 <p>{{event.venue_name}}</p>
 <p>{{event.venue_address}}, {{event.city_name}}</p>
+
 <button ng-show="EventValid" data-ng-click="vm.destroy(event)">Nahhh, I'll Pass</button>
+
 <a href={{event.url}} target="blank"><button ng-show="EventValid">Hell, Yea!</button></a>
+
 <button data-ng-click="vm.searchAgain()" ng-hide="EventValid">Search Again</button>
