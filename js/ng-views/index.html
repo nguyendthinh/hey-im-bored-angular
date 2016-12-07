@@ -1,18 +1,35 @@
 <div id="intro">
+
 <h1>Hey, I'm Bored!</h1>
+
   <h2>Insert text about app!</h2>
+
   <form id="zipcodeform" data-ng-submit="vm.create(user)" ng-controller="IndexController">
+
     <input id="textbox" type="text" name="postal_code" placeholder="What's your zipcode?"  data-ng-model="user.postal_code"><br/>
     <section>
-      <div class="icons">
+
+    <div class="icons">
+      <label ng-repeat="category in categories">
+        <div>
+        <img ng-class="{'clicked': clicked}" ng-click="clicked = !clicked" src="../../css/{{category}}icon.png" />
+        <input type="checkbox" checklist-model="user.categories" checklist-value="category">
+        </div>
+      </label>
+    </div>
+
+      <!-- <div class="icons">
         <label ng-repeat="category in categories">
-          <div class="circle">
-            <input type="checkbox" checklist-model="user.categories" checklist-value="category"> {{category}}
+          <div ng-class="{'clicked': clicked}" ng-click="clicked = !clicked" class="circle">
+              <input type="checkbox" checklist-model="user.categories" checklist-value="category"> {{category}}
           </div>
         </label>
-      </div>
+      </div> -->
     </section>
       <button type="submit">Let's Go!</button>
   </form>
+
+
   <br/>
+
 </div>

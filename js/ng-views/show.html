@@ -1,4 +1,5 @@
 <div id="showpage">
+
 <h1>What do you think about...</h1>
 <div id="eventbox">
 <h2>{{event.title}}</h2>
@@ -11,4 +12,5 @@
   <button ng-show="EventValid" data-ng-click="vm.destroy(event)">Nahhh, I'll Pass</button>
   <a href={{event.url}} target="blank"><button ng-show="EventValid">Hell, Yea!</button></a>
   <button data-ng-click="vm.searchAgain()" ng-hide="EventValid">Search Again</button>
+
 </div>

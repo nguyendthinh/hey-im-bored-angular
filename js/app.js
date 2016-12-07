@@ -2,8 +2,7 @@ angular
   .module("heyimbored", ["ui.router", "checklist-model", "ngResource"])
   .config(["$stateProvider", RouterFunction])
   .controller("IndexController", ["$scope",
-  "$state",
-  "$http", "EventFactory", "$stateParams",
+  "$state","$http", "EventFactory", "$stateParams",
   IndexControllerFunction])
   .controller("ShowController", [
   "$scope",
@@ -36,8 +35,8 @@ function RouterFunction($stateProvider) {
     })
 }
 
-
 function IndexControllerFunction($scope, $state, $http, EventFactory, $stateParams) {
+
 
   $scope.categories = [
     'Music',
@@ -55,6 +54,7 @@ function IndexControllerFunction($scope, $state, $http, EventFactory, $statePara
     postal_code: []
   };
 
+  $scope.clicked = false;
 
   this.create = function(user){
     // send this object to API and data.categories and data.postal_code
