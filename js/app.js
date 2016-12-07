@@ -65,8 +65,6 @@ function IndexControllerFunction($scope, $state, $http) {
     }).then(() => {
       $state.go("show", {reload: true});
     });
-      // $http.get("http://localhost:4001")
-
   }
 }
 
@@ -76,9 +74,6 @@ function ShowControllerFunction($scope, EventFactory, $state) {
     console.log($scope.event)
 
   })
-  // this.event.then(function(err, result){
-  //   console.log(result)
-  // })
 
   $scope.EventValid = true;
 
@@ -87,7 +82,7 @@ function ShowControllerFunction($scope, EventFactory, $state) {
     $scope.event = EventFactory.get({}, function(){
        let validation = ($scope.event.title)
        console.log(validation)
-       if (validation == true){
+       if (validation != undefined){
          console.log("true");
        }
        else{
