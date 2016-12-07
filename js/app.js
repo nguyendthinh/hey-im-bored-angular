@@ -2,8 +2,7 @@ angular
   .module("heyimbored", ["ui.router", "checklist-model", "ngResource"])
   .config(["$stateProvider", RouterFunction])
   .controller("IndexController", ["$scope",
-  "$state",
-  "$http", "EventFactory", "$stateParams",
+  "$state","$http", "EventFactory", "$stateParams",
   IndexControllerFunction])
   .controller("ShowController", [
   "$scope",
@@ -38,6 +37,7 @@ function RouterFunction($stateProvider) {
 
 function IndexControllerFunction($scope, $state, $http, EventFactory, $stateParams) {
 
+
   $scope.categories = [
     'Music',
     'Comedy',
@@ -65,7 +65,6 @@ function IndexControllerFunction($scope, $state, $http, EventFactory, $statePara
     }).then((res) => {
       $state.go("show", {}, {reload: true});
     })
-
   }
 }
 
