@@ -54,6 +54,8 @@ function IndexControllerFunction($scope, $state, $http, EventFactory, $statePara
     postal_code: []
   };
 
+  $scope.clicked = false;
+
   this.create = function(user){
     // send this object to API and data.categories and data.postal_code
     $http({
