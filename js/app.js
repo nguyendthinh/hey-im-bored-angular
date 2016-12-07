@@ -72,15 +72,35 @@ function IndexControllerFunction($scope, $state, $http) {
 
 
 function ShowControllerFunction($scope, EventFactory, $state) {
-  $scope.event = EventFactory.get();
-  $scope.event.$promise.then((data) => {
-    console.log(data);
+  $scope.event = EventFactory.get({}, function(){
+    console.log($scope.event)
+
   })
+  // this.event.then(function(err, result){
+  //   console.log(result)
+  // })
+
+  $scope.EventValid = true;
 
   this.destroy = function(event){
     $scope.event.$delete(event).then(function(){
+    $scope.event = EventFactory.get({}, function(){
+       let validation = ($scope.event.title)
+       console.log(validation)
+       if (validation == true){
+         console.log("true");
+       }
+       else{
+         console.log("false")
+          $scope.EventValid = false;
+       }
+    })
     $state.go("show")
-    $scope.event = EventFactory.get();
-  })
-}
+    })
+  }
+
+  this.searchAgain = function(){
+    $state.go("index");
+  }
+
 }
