@@ -2,17 +2,21 @@ html {
   width: 100%;
   height: 100%;
   text-align: center;
+
   /*background: rgb(207,231,250);
   background: -moz-linear-gradient(left, rgba(207,231,250,1) 0%, rgba(99,147,193,1) 100%);
   background: -webkit-linear-gradient(left, rgba(207,231,250,1) 0%,rgba(99,147,193,1) 100%);
   background: linear-gradient(to right, rgba(207,231,250,1) 0%,rgba(99,147,193,1) 100%);*/
+
   /*background: -webkit-linear-gradient(90deg, #50C9C3 10%, #96DEDA 90%);*/
 }
+
 @keyframes animated {
     0%{background-position:0% 100%}
     50%{background-position: 100% 0%}
     100%{background-position:0% 100%}
 }
+
 body {go
   display: flex;
   justify-content: center;
@@ -26,13 +30,16 @@ body {go
 background-size: 800%;
 animation: animated 120s ease infinite;
 }
+
 h2, h3 {
   color: black;
   font-family: Arial;
 }
+
 h2 {
   font-size: 30px;
 }
+
 button {
   min-height: 40px;
   min-width: 200px;
@@ -53,17 +60,39 @@ button {
   border-radius: 10px;
   border: none;
 }
+
+img {
+  border-radius: 50%;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, .3);
+  margin: 10px;
+
+}
+
+img:hover {
+  transform: scale(1.2);
+}
+
+img.clicked {
+  transform: scale(1.2);
+}
+
 button:hover {
   transform: scale(1.2);
   /*background-color: #324158;*/
 }
-.circle:hover {
+
+/*.circle:hover {
   transform: scale(1.2);
   /*background-color: RGB(104, 162, 193);*/
+
+.circle:hover {
+    transform: scale(1.2)
 }
+
 .button:active, .circle:active {
   box-shadow: none;
 }
+
 .circle {
   border-radius: 50%;
   height: 130px;
@@ -72,18 +101,30 @@ button:hover {
   color: white;
   font-weight: bold;
   line-height: 130px;
-  margin: auto;
+  /*margin: auto;*/
   text-align: center;
   font-family: Arial;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, .3);
   margin: 20px;
+  padding: 0;
 }
-.clicked {
+
+#icon1 {
+  border-radius: 50%;
+}
+
+input{
+  padding: 0;
+}
+
+.circle.clicked {
   background-color: RGB(104, 162, 173);
 }
+
 input[type="checkbox"] {
-  /*display: none;*/
+  visibility: hidden;
 }
+
 input[type="text"] {
   font-size: 30px;
   width: 600px;
@@ -94,33 +135,43 @@ input[type="text"] {
   color: black;
   border-radius: 5px;
 }
+
 input[type="text"]:focus {
   background-color: rgb(207,231,250);
 }
+
 input[type="text"]:not(focus) {
   background-color: white;
 }
+
 #maincontent {
   /* Make content be in the middle of the screen browser*/
+
+
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
+
 #intro {
   font-family: Arial;
 }
+
 h1 {
   font-family: 'Fredoka One', cursive;
   font-size: 70px;
   color: white;
 }
+
 #zipcodeform p {
   margin-top: 30px;
 }
+
 #selections {
   display: none;
 }
+
 #categories {
   display: flex;
   flex-direction: row;
@@ -128,12 +179,15 @@ h1 {
   justify-content: center;
   align-content: center;
 }
+
 #columnOne, #columnTwo {
   padding: 0px 10px;
 }
+
 #choices {
   display: none;
 }
+
 #eventbox {
   height: auto;
   width: auto;
@@ -148,33 +202,40 @@ h1 {
   font-family: Arial;
   margin-bottom: 20px;
 }
+
 #showpage {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 #eventinfo h1 {
   font-size: 30px;
 }
+
 #startagainbutton {
   display: none;
 }
+
 #introbox {
   border: 1px solid white;
   height: 100px;
   width: 100px;
   position: ;
 }
+
 #intro h2 {
   color: white;
 }
+
 .icons{
   display: flex;
   flex-direction: row;
   width: 85%;
   flex-wrap: wrap;
   justify-content: center;
+
 }
 section {
   display: flex;

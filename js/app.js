@@ -36,7 +36,6 @@ function RouterFunction($stateProvider) {
     })
 }
 
-
 function IndexControllerFunction($scope, $state, $http, EventFactory, $stateParams) {
 
   $scope.categories = [
@@ -55,7 +54,6 @@ function IndexControllerFunction($scope, $state, $http, EventFactory, $statePara
     postal_code: []
   };
 
-
   this.create = function(user){
     // send this object to API and data.categories and data.postal_code
     $http({
@@ -65,6 +63,7 @@ function IndexControllerFunction($scope, $state, $http, EventFactory, $statePara
     }).then((res) => {
       $state.go("show", {}, {reload: true});
     })
+
   }
 }
 
