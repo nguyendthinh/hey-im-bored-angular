@@ -1,10 +1,13 @@
 angular
   .module("heyimbored", ["ui.router", "checklist-model", "ngResource"])
   .config(["$stateProvider", RouterFunction])
-  .controller("IndexController", ["$scope", IndexControllerFunction])
+  .controller("IndexController", ["$scope",
+  "$state",
+  "$http",
+  IndexControllerFunction])
   .controller("ShowController", [
   "$scope",
-  "EventFactory",
+  "EventFactory", "$state",
   ShowControllerFunction])
   .factory("EventFactory", [
     "$resource",
@@ -34,8 +37,7 @@ function RouterFunction($stateProvider) {
 }
 
 
-
-function IndexControllerFunction($scope) {
+function IndexControllerFunction($scope, $state, $http) {
 
   $scope.categories = [
     'Music',
@@ -53,17 +55,31 @@ function IndexControllerFunction($scope) {
     postal_code: []
   };
 
-
   this.create = function(user){
-    console.log(user)
-      // this.songs.$add(this.newSong).then( () => this.newSong = {} )
+    // send this object to API and data.categories and data.postal_code
+    $http({
+      url: "http://localhost:4001/",
+      method: "post",
+      data: user
+    }).then(() => {
+      $state.go("show", {reload: true});
+    });
+      // $http.get("http://localhost:4001")
+
   }
 }
 
 
-function ShowControllerFunction($scope, EventFactory) {
-  $scope.events = EventFactory.query();
-  $scope.events.$promise.then((data) => {
+function ShowControllerFunction($scope, EventFactory, $state) {
+  $scope.event = EventFactory.get();
+  $scope.event.$promise.then((data) => {
     console.log(data);
   })
+
+  this.destroy = function(event){
+    $scope.event.$delete(event).then(function(){
+    $state.go("show", {reload: true})
+    $scope.event = EventFactory.get();
+  })
+}
 }

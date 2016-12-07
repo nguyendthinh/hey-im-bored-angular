@@ -1,3 +1,17 @@
-Hello World
+<div id="showpage">
 
-<pre>{{ events | json}}</pre>
+<h1>What do you think about...</h1>
+
+<div id="eventbox">
+<h2>{{event.title}}</h2>
+<h3>VENUE: {{event.venue_name}}</h3>
+<h3>LOCATION: {{event.venue_address}}</h3>
+<!-- <h3 ng-if="{{event.venue_address}} == null">LOCATION: No information currently</h3> -->
+</div>
+
+<div>
+<button data-ng-click="vm.destroy(event)">Nahhh, I'll Pass</button>
+<a href={{event.url}} target="blank"><button>Hell, Yea!</button></a>
+</div>
+
+</div>
