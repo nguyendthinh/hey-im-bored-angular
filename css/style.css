@@ -61,14 +61,32 @@ button {
   border: none;
 }
 
+img {
+  border-radius: 50%;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, .3);
+  margin: 10px;
+
+}
+
+img:hover {
+  transform: scale(1.2);
+}
+
+img.clicked {
+  transform: scale(1.2);
+}
+
 button:hover {
   transform: scale(1.2);
   /*background-color: #324158;*/
 }
 
-.circle:hover {
+/*.circle:hover {
   transform: scale(1.2);
   /*background-color: RGB(104, 162, 193);*/
+
+.circle:hover {
+    transform: scale(1.2)
 }
 
 .button:active, .circle:active {
@@ -83,19 +101,28 @@ button:hover {
   color: white;
   font-weight: bold;
   line-height: 130px;
-  margin: auto;
+  /*margin: auto;*/
   text-align: center;
   font-family: Arial;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, .3);
   margin: 20px;
+  padding: 0;
 }
 
-.clicked {
+#icon1 {
+  border-radius: 50%;
+}
+
+input{
+  padding: 0;
+}
+
+.circle.clicked {
   background-color: RGB(104, 162, 173);
 }
 
 input[type="checkbox"] {
-  /*display: none;*/
+  visibility: hidden;
 }
 
 input[type="text"] {
@@ -222,4 +249,3 @@ main{
   transform: translate(-50%, -50%);
  width: 100%;
 }
-input{}
