@@ -96,15 +96,7 @@ div.label{
   margin: 20px;
 }
 
-.label > img:hover {
-  transform: scale(1.2);
 
-}
-
-.label > img.clicked {
-  transform: scale(1.2);
-  background-color: black;
-}
 
 
 .button:active, .circle:active {
@@ -119,7 +111,13 @@ input{
   padding: 0;
 }
 
-input[type="checkbox"] {
+
+input[type=radio]:checked+img{
+      transform: scale(1.2);
+        background-color: black;
+}
+
+input[type="radio"] {
   visibility: hidden;
 }
 
@@ -144,9 +142,6 @@ input[type="text"]:not(focus) {
 }
 
 #maincontent {
-  /* Make content be in the middle of the screen browser*/
-
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -235,7 +230,8 @@ h1 {
   align-items: center;
   align-content: center;
   align-self: center;
-  margin-bottom: 20px;
+  margin-top: -30px;
+  margin-bottom: 30px;
 }
 section {
   display: flex;

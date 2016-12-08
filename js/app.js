@@ -1,5 +1,5 @@
 angular
-  .module("heyimbored", ["ui.router", "checklist-model", "ngResource"])
+  .module("heyimbored", ["ui.router", "ngResource"])
   .config(["$stateProvider", RouterFunction])
   .controller("IndexController", ["$scope",
   "$state","$http", "EventFactory", "$stateParams",
@@ -39,12 +39,12 @@ function IndexControllerFunction($scope, $state, $http, EventFactory, $statePara
 
 
   $scope.categories = [
-    'Music',
-    'Comedy',
-    'Sports',
-    'Arts',
-    'Food',
-    'Family'
+    'music',
+    'performing_arts',
+    'sports',
+    'art',
+    'food',
+    'family_fun_kids'
   ];
 
   $scope.postal_code = []
