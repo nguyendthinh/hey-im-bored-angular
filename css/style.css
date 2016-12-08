@@ -27,7 +27,7 @@ body {
 
 h2, h3 {
   color: black;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
 h2 {
@@ -62,7 +62,7 @@ button {
   color: black;
   line-height: 37px;
   margin: auto;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-size: 30px;
   font-weight: bold;
   padding-right: 20px;
@@ -97,7 +97,13 @@ div.label{
   margin: 20px;
 }
 
+div.label > img:hover {
+  transform: scale(1.2);
+}
 
+img.homepage:hover{
+  transform: scale(1.2);
+}
 
 
 .button:active, .circle:active {

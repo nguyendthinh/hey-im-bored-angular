@@ -59,7 +59,7 @@ function IndexControllerFunction($scope, $state, $http, EventFactory, $statePara
   this.create = function(user){
     // send this object to API and data.categories and data.postal_code
     $http({
-      url: "http://localhost:4001/api/events/",
+      url: "http://frozen-cove-33468.herokuapp.com/api/events",
       method: "post",
       data: user
     }).then((res) => {
