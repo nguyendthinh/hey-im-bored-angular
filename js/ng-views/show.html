@@ -1,21 +1,10 @@
 <div id="showpage">
 <a ui-sref="index"><img class="logo" data-ng-click="vm.reset()" src="../../css/Logo.png" /></a>
-<h1>What do you think about...</h1>
-<<<<<<< HEAD
-<div id="eventbox">
-  <img src="../../css/{{req.body.categories}}icon.png" alt="" />
-<h2>{{event.title}}</h2>
-<h4>{{event.start_time}}</h4>
-<h2>{{event.comment}}</h2>
-
-<h3>VENUE: {{event.venue_name}}</h3>
-<h3>{{event.venue_address}}</h3>
-<h3>{{event.city_name}}, {{event.region_abbr}}</h3>
-=======
+<h1 data-ng-show="EventValid">What do you think about...</h1>
+<h1 data-ng-hide="EventValid">Really? Nothing interests you?</h1>
 
 <div class="snarkycomment" data-ng-hide="EventValid">
-  <h1 data-ng-hide="EventValid">{{event.comment}}</h1>
->>>>>>> a8a55c4af16ad84054f6c0e7c9ebb8a059d4d76f
+  <h1 id="comment" data-ng-hide="EventValid">{{event.comment}}</h1>
 </div>
 
 <div data-ng-show="EventValid" id="eventbox">
