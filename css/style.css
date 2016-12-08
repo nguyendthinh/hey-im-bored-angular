@@ -2,13 +2,9 @@ html {
   width: 100%;
   height: 100%;
   text-align: center;
-
-  /*background: rgb(207,231,250);
-  background: -moz-linear-gradient(left, rgba(207,231,250,1) 0%, rgba(99,147,193,1) 100%);
-  background: -webkit-linear-gradient(left, rgba(207,231,250,1) 0%,rgba(99,147,193,1) 100%);
-  background: linear-gradient(to right, rgba(207,231,250,1) 0%,rgba(99,147,193,1) 100%);*/
-
-  /*background: -webkit-linear-gradient(90deg, #50C9C3 10%, #96DEDA 90%);*/
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 @keyframes animated {
@@ -17,18 +13,16 @@ html {
     100%{background-position:0% 100%}
 }
 
-body {go
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  height: 100vh;
-  /*background-image: url("https://static.pexels.com/photos/36487/above-adventure-aerial-air.jpg");
-  background-size: cover;
-  background-attachment: fixed;*/
+body {
   background: linear-gradient(235deg, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #4b0082, #ee82ee);
-background-size: 800%;
-animation: animated 120s ease infinite;
+  background-size: 800%;
+  animation: animated 120s ease infinite;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
 }
 
 h2, h3 {
@@ -40,73 +34,76 @@ h2 {
   font-size: 30px;
 }
 
+h3{
+  font-size: 24px;
+}
+h3.subtitle{
+  color: white;
+}
+
+.snarkycomment{
+  height: 300px;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
 button {
   min-height: 40px;
   min-width: 200px;
-  background-color: white;
-  /*background-color: RGB(104, 162, 193);*/
+  background-color: rgba(255, 255, 255, .6);
   color: black;
   line-height: 37px;
-  margin: auto;
-  font-family: Arial;
+  font-family: Helvetica;
   font-size: 30px;
   font-weight: bold;
   padding-right: 20px;
   padding-left: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin: 30px;
+  margin: 10px 20px 10px 20px;
   box-shadow: 5px 5px 0px rgba(0, 0, 0, .8);
   border-radius: 10px;
   border: none;
 }
 
-img {
-  border-radius: 50%;
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, .3);
-  margin: 10px;
-
-}
-
-img:hover {
-  transform: scale(1.2);
-}
-
-img.clicked {
-  transform: scale(1.2);
-}
-
 button:hover {
   transform: scale(1.2);
-  /*background-color: #324158;*/
+  background-color: rgba(255, 255, 255, .9);
 }
 
-/*.circle:hover {
+
+img.logo{
+  width: 100px;
+  margin-top: 20px;
+}
+.label > img {
+  border-radius: 50%;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, .3);
+  margin: 20px 10px;
+}
+
+div.label{
+  width: 130px;
+  height: 130px;
+  margin: 20px;
+}
+
+.label > img:hover {
   transform: scale(1.2);
-  /*background-color: RGB(104, 162, 193);*/
 
-.circle:hover {
-    transform: scale(1.2)
 }
+
+.label > img.clicked {
+  transform: scale(1.2);
+  background-color: black;
+}
+
 
 .button:active, .circle:active {
   box-shadow: none;
-}
-
-.circle {
-  border-radius: 50%;
-  height: 130px;
-  width: 130px;
-  background-color: black;
-  color: white;
-  font-weight: bold;
-  line-height: 130px;
-  /*margin: auto;*/
-  text-align: center;
-  font-family: Arial;
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, .3);
-  margin: 20px;
-  padding: 0;
 }
 
 #icon1 {
@@ -117,16 +114,13 @@ input{
   padding: 0;
 }
 
-.circle.clicked {
-  background-color: RGB(104, 162, 173);
-}
-
 input[type="checkbox"] {
   visibility: hidden;
 }
 
 input[type="text"] {
   font-size: 30px;
+  font-color: black;
   width: 600px;
   text-align: center;
   border: 1px solid black;
@@ -137,11 +131,11 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-  background-color: rgb(207,231,250);
+  background-color: white;
 }
 
 input[type="text"]:not(focus) {
-  background-color: white;
+  background-color: rgba(255, 255, 255, .7);
 }
 
 #maincontent {
@@ -162,6 +156,7 @@ h1 {
   font-family: 'Fredoka One', cursive;
   font-size: 70px;
   color: white;
+  margin: 0px;
 }
 
 #zipcodeform p {
@@ -180,30 +175,27 @@ h1 {
   align-content: center;
 }
 
-#columnOne, #columnTwo {
-  padding: 0px 10px;
-}
-
 #choices {
   display: none;
 }
 
 #eventbox {
   height: auto;
-  width: auto;
+  width: 650px;
   padding: 50px;
   background-color: white;
-  /*background-color: RGB(104, 162, 173);*/
   color: black;
   border-radius: 10px;
   box-shadow: inset 0 0 1px 1px gray, 0px 10px 15px rgba(0, 0, 0, .5);
   display: inline-block;
   vertical-align: middle;
   font-family: Arial;
-  margin-bottom: 20px;
+  margin: 40px 0 10px 0;
 }
 
 #showpage {
+  height: auto;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -235,17 +227,72 @@ h1 {
   width: 85%;
   flex-wrap: wrap;
   justify-content: center;
-
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  margin-bottom: 20px;
 }
 section {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 20px;
 }
+
 main{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
  width: 100%;
+ height: 100%;
+}
+
+.buttoncontainer{
+  margin: 30px;
+}
+
+@media (max-width: 750px) {
+  input[type="text"] {
+    font-size: 25px;
+    width: 320px;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, .4);
+    padding: 8px;
+    color: black;
+    border-radius: 5px;
+  }
+
+  .icons{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 0px;
+  }
+
+  div.label{
+    margin: 5px;
+  }
+
+
+  .label > img {
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+  }
+  #eventbox {
+    height: auto;
+    width: 320px;
+    padding: 10px;
+  }
+  button{
+    margin-bottom: 20px;
+  }
+  .snarkycomment{
+    height: 300px;
+    width: 350px;
+}
+
+@media (max-width 400px){
+  .label > img {
+    margin-top: 5px;
+    width: 100px;
+    height: 100px;
+  }
 }
