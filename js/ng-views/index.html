@@ -13,8 +13,9 @@
     <div class="icons">
       <label ng-repeat="category in categories">
         <div class="label">
-          <img ng-class="{'clicked': clicked}" ng-click="clicked = !clicked" src="../../css/{{category}}icon.png" />
-          <input type="checkbox" checklist-model="user.categories" checklist-value="category">
+
+          <input id="a1" class = "radiostyle" name="category" type="radio" data-ng-model="user.categories" ng-value="category">
+          <img for="a1" ng-class="{'clicked': clicked}" class="radiostyle" ng-click="clicked = !clicked" src="../../css/{{category}}icon.png" />
         </div>
       </label>
     </div>
