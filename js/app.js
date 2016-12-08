@@ -14,7 +14,7 @@ angular
   ])
 
   function EventFactoryFunction($resource) {
-    return $resource("http://localhost:4001/api/events", {}, {
+    return $resource("https://frozen-cove-33468.herokuapp.com/api/events", {}, {
       update: {method: "PUT"}
     })
   }
