@@ -1,16 +1,16 @@
 <div id="showpage">
-
+<a ui-sref="index"><img class="logo" data-ng-click="vm.reset()" src="../../css/Logo.png" /></a>
 <h1>What do you think about...</h1>
 <div id="eventbox">
-<h2>{{event.title}}</h2>
-<h2>{{event.comment}}</h2>
+<h2 data-ng-show="EventValid">{{event.title}}</h2>
+<h2 data-ng-hide="EventValid">{{event.comment}}</h2>
 
-<h3>VENUE: {{event.venue_name}}</h3>
-<h3>LOCATION: {{event.venue_address}}</h3>
+<h3 data-ng-show="EventValid">VENUE: {{event.venue_name}}</h3>
+<h3 data-ng-show="EventValid">LOCATION: {{event.venue_address}}</h3>
 </div>
-<div>
-  <button ng-show="EventValid" data-ng-click="vm.destroy(event)">Nahhh, I'll Pass</button>
-  <a href={{event.url}} target="blank"><button ng-show="EventValid">Hell, Yea!</button></a>
+<div class="buttoncontainer">
+  <button data-ng-show="EventValid" data-ng-click="vm.destroy(event)">Nahhh, I'll Pass</button>
+  <a href={{event.url}} target="blank"><button data-ng-show="EventValid">Hell, Yea!</button></a>
   <button data-ng-click="vm.searchAgain()" ng-hide="EventValid">Search Again</button>
 </div>
 </div>
