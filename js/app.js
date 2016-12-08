@@ -74,6 +74,7 @@ function ShowControllerFunction($scope, EventFactory, $state) {
   $scope.event = EventFactory.get();
   $scope.EventValid = true;
 
+
   this.destroy = function(event){
     $scope.event.$delete(event).then(function(){
     $scope.event = EventFactory.get({}, function(){

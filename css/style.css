@@ -33,7 +33,7 @@ animation: animated 120s ease infinite;
 
 h2, h3 {
   color: black;
-  font-family: Arial;
+  font-family: 'Open Sans', sans-serif;
 }
 
 h2 {
@@ -48,7 +48,7 @@ button {
   color: black;
   line-height: 37px;
   margin: auto;
-  font-family: Arial;
+  font-family: 'Open Sans', sans-serif;
   font-size: 30px;
   font-weight: bold;
   padding-right: 20px;
@@ -190,7 +190,7 @@ h1 {
 
 #eventbox {
   height: auto;
-  width: auto;
+  width: 60%;
   padding: 50px;
   background-color: white;
   /*background-color: RGB(104, 162, 173);*/

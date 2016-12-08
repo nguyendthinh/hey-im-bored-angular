@@ -2,11 +2,14 @@
 
 <h1>What do you think about...</h1>
 <div id="eventbox">
+  <img src="../../css/{{req.body.categories}}icon.png" alt="" />
 <h2>{{event.title}}</h2>
+<h4>{{event.start_time}}</h4>
 <h2>{{event.comment}}</h2>
 
 <h3>VENUE: {{event.venue_name}}</h3>
-<h3>LOCATION: {{event.venue_address}}</h3>
+<h3>{{event.venue_address}}</h3>
+<h3>{{event.city_name}}, {{event.region_abbr}}</h3>
 </div>
 <div>
   <button ng-show="EventValid" data-ng-click="vm.destroy(event)">Nahhh, I'll Pass</button>
