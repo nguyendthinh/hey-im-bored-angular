@@ -34,13 +34,28 @@ h2 {
   font-size: 30px;
 }
 
+h3{
+  font-size: 24px;
+}
+h3.subtitle{
+  color: white;
+}
+
+.snarkycomment{
+  height: 300px;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
 button {
   min-height: 40px;
   min-width: 200px;
   background-color: rgba(255, 255, 255, .6);
   color: black;
   line-height: 37px;
-  margin: auto;
   font-family: Helvetica;
   font-size: 30px;
   font-weight: bold;
@@ -48,7 +63,7 @@ button {
   padding-left: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin: 10px 20px;
+  margin: 10px 20px 10px 20px;
   box-shadow: 5px 5px 0px rgba(0, 0, 0, .8);
   border-radius: 10px;
   border: none;
@@ -70,42 +85,25 @@ img.logo{
   margin: 20px 10px;
 }
 
+div.label{
+  width: 130px;
+  height: 130px;
+  margin: 20px;
+}
+
 .label > img:hover {
   transform: scale(1.2);
+
 }
 
 .label > img.clicked {
   transform: scale(1.2);
+  background-color: black;
 }
 
-
-/*.circle:hover {
-  transform: scale(1.2);
-  /*background-color: RGB(104, 162, 193);*/
-
-.circle:hover {
-    transform: scale(1.2)
-
-}
 
 .button:active, .circle:active {
   box-shadow: none;
-}
-
-.circle {
-  border-radius: 50%;
-  height: 130px;
-  width: 130px;
-  background-color: black;
-  color: white;
-  font-weight: bold;
-  line-height: 130px;
-  /*margin: auto;*/
-  text-align: center;
-  font-family: Arial;
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, .3);
-  margin: 20px;
-  padding: 0px;;
 }
 
 #icon1 {
@@ -114,10 +112,6 @@ img.logo{
 
 input{
   padding: 0;
-}
-
-.circle.clicked {
-  background-color: RGB(104, 162, 173);
 }
 
 input[type="checkbox"] {
@@ -187,7 +181,7 @@ h1 {
 
 #eventbox {
   height: auto;
-  width: 500px;
+  width: 650px;
   padding: 50px;
   background-color: white;
   color: black;
@@ -196,7 +190,7 @@ h1 {
   display: inline-block;
   vertical-align: middle;
   font-family: Arial;
-  margin: 40px;
+  margin: 40px 0 10px 0;
 }
 
 #showpage {
@@ -236,7 +230,7 @@ h1 {
   align-items: center;
   align-content: center;
   align-self: center;
-
+  margin-bottom: 20px;
 }
 section {
   display: flex;
@@ -251,29 +245,31 @@ main{
 }
 
 .buttoncontainer{
-  margin-bottom: 20px;
+  margin: 30px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   input[type="text"] {
     font-size: 25px;
-    width: 300px;
+    width: 320px;
     text-align: center;
     border: 1px solid black;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, .4);
-    padding: 10px;
+    padding: 8px;
     color: black;
     border-radius: 5px;
   }
 
   .icons{
     width: 100%;
+    margin-top: 20px;
+    margin-bottom: 0px;
   }
 
   div.label{
-    width: 130px;
-    height: 130px;
+    margin: 5px;
   }
+
 
   .label > img {
     margin-top: 10px;
@@ -282,9 +278,15 @@ main{
   }
   #eventbox {
     height: auto;
-    width: 280px;
+    width: 320px;
     padding: 10px;
   }
+  button{
+    margin-bottom: 20px;
+  }
+  .snarkycomment{
+    height: 300px;
+    width: 350px;
 }
 
 @media (max-width 400px){

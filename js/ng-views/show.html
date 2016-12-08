@@ -1,9 +1,13 @@
 <div id="showpage">
 <a ui-sref="index"><img class="logo" data-ng-click="vm.reset()" src="../../css/Logo.png" /></a>
 <h1>What do you think about...</h1>
-<div id="eventbox">
+
+<div class="snarkycomment" data-ng-hide="EventValid">
+  <h1 data-ng-hide="EventValid">{{event.comment}}</h1>
+</div>
+
+<div data-ng-show="EventValid" id="eventbox">
 <h2 data-ng-show="EventValid">{{event.title}}</h2>
-<h2 data-ng-hide="EventValid">{{event.comment}}</h2>
 
 <h3 data-ng-show="EventValid">VENUE: {{event.venue_name}}</h3>
 <h3 data-ng-show="EventValid">LOCATION: {{event.venue_address}}</h3>
