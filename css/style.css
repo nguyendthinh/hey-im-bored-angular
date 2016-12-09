@@ -118,6 +118,13 @@ input{
   padding: 0;
 }
 
+div.label > img:hover{
+  transform: scale(1.2);
+}
+
+img.homepage:hover{
+  transform: scale(1.2);
+}
 
 input[type=radio]:checked+img{
       transform: scale(1.2);
@@ -231,7 +238,7 @@ h1 {
 .icons{
   display: flex;
   flex-direction: row;
-  width: 85%;
+  width: 100%;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -250,6 +257,11 @@ section {
 main{
  width: 100%;
  height: 100%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ align-content: center;
 }
 
 .buttoncontainer{
@@ -295,6 +307,12 @@ main{
   .snarkycomment{
     height: 300px;
     width: 350px;
+}
+
+main {
+display: block;
+}
+
 }
 
 @media (max-width 400px){
