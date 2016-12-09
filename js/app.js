@@ -95,8 +95,4 @@ function ShowControllerFunction($scope, EventFactory, $state) {
     $state.go("index");
   }
 
-  this.reset = function(){
-    console.log("Empty entire UserEvents collection")
-  }
-
 }
