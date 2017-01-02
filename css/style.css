@@ -13,10 +13,24 @@ html {
     100%{background-position:0% 100%}
 }
 
+@-webkit-keyframes animated {
+    0%{background-position:0% 100%}
+    50%{background-position: 100% 0%}
+    100%{background-position:0% 100%}
+}
+
+@-moz-keyframes animated {
+    0%{background-position:0% 100%}
+    50%{background-position: 100% 0%}
+    100%{background-position:0% 100%}
+}
+
 body {
   background: linear-gradient(235deg, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #4b0082, #ee82ee);
   background-size: 800%;
   animation: animated 120s ease infinite;
+  -webkit-animation: animated 120s ease infinite;
+  -moz-animation: animated 120s ease infinite;
   width: 100%;
   height: auto;
   display: flex;
