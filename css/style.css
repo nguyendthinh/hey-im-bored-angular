@@ -216,11 +216,23 @@ h1 {
 }
 
 #categories {
-  display: flex;
-  flex-direction: row;
   text-align: center;
+
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+
   justify-content: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+
   align-content: center;
+  -webkit-align-content: center;
+  -moz-align-content: center;
 }
 
 #choices {
