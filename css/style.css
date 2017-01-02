@@ -3,8 +3,16 @@ html {
   height: 100%;
   text-align: center;
   display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+
   justify-content: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+
   align-content: center;
+  -webkit-align-content: center;
+  -moz-align-content: center;
 }
 
 @keyframes animated {
@@ -33,10 +41,22 @@ body {
   -moz-animation: animated 120s ease infinite;
   width: 100%;
   height: auto;
+
   display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+
   flex-direction: column;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+
   align-content: center;
+  -webkit-align-content: center;
+  -moz-align-content: center;
+
   align-items: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
 }
 
 h2, h3 {
